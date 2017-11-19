@@ -1,7 +1,6 @@
 package com.java8;
 
 import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -14,8 +13,6 @@ public class FlatMapExample {
 								new Person("Kohli", 29, Arrays.asList(18,19))
 								);
 	
-	
-	
 	public static void main(String[] args) {
 		
 		List<Integer> phn = person.stream()
@@ -26,9 +23,10 @@ public class FlatMapExample {
 		
 		System.out.println(phn);
 
-		
+		System.out.println("Collecting to a Map");
 		Map<String, Integer> map = person.stream()
-										.collect(Collectors.toMap(Person::getName, Person::getAge));
+										.collect(Collectors.toMap(Person::getName,
+																  Person::getAge));
 		
 		System.out.println(map);
 	}
